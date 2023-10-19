@@ -5,7 +5,7 @@ service /health-admin on new http:Listener(8080) {
     // Define Kafka producer endpoint
     endpoint kafka:Producer kafkaProducer {
         bootstrapServers: "your-bootstrap-servers",
-        topic: "appointment-requests"
+        topic:"appointment-requests"
     };
 
     resource function post sendAppointmentRequest(http:Request req) {

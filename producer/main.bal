@@ -4,11 +4,11 @@ public function main() {
     // Define Kafka producer endpoint
     endpoint kafka:Producer kafkaProducer {
         bootstrapServers: "your-bootstrap-servers",
-        topic: "Health"
+        topic: "appointment-requests"
     };
 
     // Send messages using the Kafka producer
-    var result = kafkaProducer->send("Your message content");
+    var result = kafkaProducer->send("Successfull Accept");
 
     if (result is error) {
         // Handle error

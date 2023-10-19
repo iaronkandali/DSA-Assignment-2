@@ -3,13 +3,13 @@ import ballerina/kafka;
 public function main() {
     // Define Kafka consumer endpoint
     endpoint kafka:Consumer kafkaConsumer {
-        groupId: "your-group-id",
+        groupId: "23",
         bootstrapServers: "your-bootstrap-servers",
-        topics: ["your-topic"]
+        topics: ["appointment-requests"]
     };
 
     // Subscribe to Kafka topics and process messages
-    var result = kafkaConsumer->subscribe("your-topic");
+    var result = kafkaConsumer->subscribe("appointment-requests");
 
     if (result is error) {
         // Handle subscription error
